@@ -56,7 +56,7 @@ async def echo(message: types.Message):
 async def send_pong(message: types.Message):
     pong=""
     hostname='192.168.10.210'
-    response = os.system('ping ' + hostname)
+    response = os.system('ping -n 1'+ hostname) #windows "ping -n 1", linux  "ping -c 1"
     if response == 0:
       pong=(' Игорь докладывает, Камеры клуб доступны')
     else:
